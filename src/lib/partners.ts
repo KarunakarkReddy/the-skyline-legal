@@ -35,9 +35,13 @@ export const partners: Partner[] = [
       "Consumer Law",
     ],
     bio: [
-      "Based in Bengaluru, Chandan S Malapur has represented clients before the Supreme Court of India, High Court of Karnataka, Trial Courts, National Company Law Tribunal (NCLT), and RERA Authorities.",
-      "His areas of expertise include Civil Law, Commercial Law, Property Law, Service Law, Administrative Law, Constitutional Law, Contractual Disputes, Insolvency, Electricity Law, Intellectual Property, Employment Law, and Consumer Law.",
-      "He also advises and represents clients in Government Contract Litigation, Techno-Commercial Disputes, Shareholder Disputes, Writ Petitions, Debt Recovery, Insolvency Proceedings, and Real Estate Litigation.",
+      "He is based in Bengaluru, and has represented clients in civil, commercial and property disputes before the Supreme Court, Karnataka High Court, and trial courts at Bengaluru.",
+      "He also regularly appears before commissions and forums and has extensive experience before tribunals i.e., KSAT, CAT etc. as well. His main areas of expertise include service, civil, criminal, administrative, employment, contractual disputes, and consumer law at District and State commissions.",
+      "He also represents clients in several high value commercial, contract disputes, money claims, partition, real estate actions, inheritance and succession suits and consumer briefs.",
+      "He also represents both borrowers and lenders in debt restructuring actions, and has significant experience in handling complex petitions filed in relation to both private and public limited companies in the High Court of Karnataka.",
+      "He is regularly involved in liaisoning work as well which includes, but is not limited to, drafting deeds, contracts, agreements, and bye-laws for educational institutions.",
+      "He also renders title opinions for individuals and projects in Karnataka.",
+      "He regularly briefs designated senior counsels of the High Court of Karnataka and the Supreme Court of India in high stake matters.",
     ],
     courts: [
       "Supreme Court of India",
@@ -67,9 +71,10 @@ export const partners: Partner[] = [
       "Consumer Litigation",
     ],
     bio: [
-      "Sateesh N Kottalagi represents clients in several high-value legal disputes involving constitutional, commercial, corporate, and service matters.",
-      "His expertise includes Service Law, Employee Contract Disputes, Writ Petitions, Government Contract Litigation, Real Estate Litigation, Inheritance, Succession, Intellectual Property, Shareholder Disputes, Consumer Litigation, Insolvency, and Debt Restructuring.",
-      "He regularly represents borrowers, lenders, companies, and corporate entities before the High Court of Karnataka and the National Company Law Tribunal (NCLT) in complex corporate and insolvency matters.",
+      "He represents clients in several high value service, employee contract disputes and writ petitions pertaining to award of government contracts, real estate actions, inheritance and succession suits, civil and criminal cases at the district and state level, disciplinary cases and consumer briefs.",
+      "He also represents both borrowers and lenders in restructuring actions, and has significant experience in handling complex petitions filed in relation to both private and public limited companies in the High Court of Karnataka.",
+      "He handles education related matters before the Principal Secretary, Commissioner, and Director of the School Education and Literacy Department.",
+      "He handles Lokayukta related matters before the Lokayukta Court at Bengaluru.",
     ],
     courts: [
       "High Court of Karnataka",
@@ -98,9 +103,10 @@ export const partners: Partner[] = [
       "Insolvency",
     ],
     bio: [
-      "Chandrakant Pol has extensive experience handling complex civil and commercial litigation across multiple jurisdictions.",
-      "Areas of practice include Civil Litigation, Commercial Litigation, Commercial Contracts, Real Estate Litigation, Intellectual Property Rights, Consumer Disputes, Arbitration, Construction Arbitration, Company Law, Insolvency, Corporate Advisory, and Contract Drafting.",
-      "Regularly appears before Trial Courts, High Court of Karnataka, High Court of Delhi, National Company Law Tribunal (NCLT), and Arbitration Tribunals — advising businesses on corporate governance, commercial transactions, insolvency proceedings, and legal documentation.",
+      "He has wide ranging experience in civil and commercial disputes, having conducted litigation arising out of commercial contracts, individual disputes, real estate transactions and consumer disputes before the Trial Courts and the High Courts of Karnataka.",
+      "He has advised and represented clients in criminal matters, arbitration proceedings as well as in associated proceedings before courts.",
+      "He also deals exclusively with debt recovery tribunal matters and regularly handles cases at DRT.",
+      "He also provides general corporate advice and contract drafting services to clients.",
     ],
     courts: [
       "High Court of Karnataka",
@@ -130,10 +136,12 @@ export const partners: Partner[] = [
       "Service Law",
     ],
     bio: [
-      "Madan Pol is a practicing Advocate before the High Court of Karnataka with a multidisciplinary legal practice focused on resolving complex legal challenges across diverse sectors.",
-      "He possesses extensive experience in Civil Litigation, Criminal Litigation, Real Estate Transactions, Property Disputes, Consumer Protection, Debt Recovery, Administrative Law, and Service Law.",
-      "His professional journey within Skyline Legal is a testament to excellence and commitment. Beginning as an intern, his outstanding legal acumen, dedication, and strategic handling of complex litigation led to his rapid elevation as a Partner.",
-      "Beyond conventional litigation, he regularly appears before the High Court of Karnataka, Karnataka Administrative Tribunal (KAT), and Central Administrative Tribunal (CAT), representing individuals, corporations, and government employees in administrative and service law matters.",
+      "He regularly deals cases before several courts in Bengaluru, which include, but are not limited to, civil, commercial, arbitration, cooperative society, revenue courts, tribunals and forums, and the High Court of Karnataka, with a multi-disciplinary practice that addresses complex legal challenges across diverse sectors.",
+      "He brings comprehensive expertise to the firm, specializing in civil and criminal litigation, real estate transactions and disputes, consumer protection, and debt recovery laws.",
+      "In addition to standard trial litigation, he boasts extensive experience navigating administrative and service law.",
+      "He also handles real estate deals for individuals and builders and has expertise in drafting Joint Development Agreements (JDAs) and agreements between individuals and builders.",
+      "He regularly represents individuals, corporations, and government employees before both the Karnataka Administrative Tribunal (KAT) and the Central Administrative Tribunal (CAT), delivering favourable outcomes in intricate regulatory matters.",
+      "He also renders title opinions for individuals and projects in Karnataka.",
     ],
     courts: [
       "High Court of Karnataka",
