@@ -69,9 +69,9 @@ function PracticeAreaDetail() {
           >
             <ArrowLeft size={13} /> All Practice Areas
           </Link>
-          <div className="mt-6">
+          <div className="mt-10 w-full">
             <span className="eyebrow">{area.category}</span>
-            <h1 className="mt-3 font-display text-4xl md:text-6xl text-gradient-gold">
+            <h1 className="mt-2 font-display text-4xl md:text-5xl leading-tight tracking-wide text-gradient-gold">
               {area.title}
             </h1>
             <span className="gold-rule mt-6" />

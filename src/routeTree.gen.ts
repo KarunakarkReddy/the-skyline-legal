@@ -13,10 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AuthRouteImport } from './routes/auth'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -49,11 +49,6 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BookRoute = BookRouteImport.update({
   id: '/book',
   path: '/book',
@@ -67,6 +62,11 @@ const ContactRoute = ContactRouteImport.update({
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -134,10 +134,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
-  '/blog': typeof BlogRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -155,10 +155,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
-  '/blog': typeof BlogRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -178,10 +178,10 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
-  '/blog': typeof BlogRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -201,10 +201,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
-    | '/blog'
     | '/book'
     | '/contact'
     | '/faqs'
+    | '/gallery'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
@@ -222,10 +222,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/auth'
-    | '/blog'
     | '/book'
     | '/contact'
     | '/faqs'
+    | '/gallery'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
@@ -244,10 +244,10 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/about'
     | '/auth'
-    | '/blog'
     | '/book'
     | '/contact'
     | '/faqs'
+    | '/gallery'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
@@ -267,10 +267,10 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
-  BlogRoute: typeof BlogRoute
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
+  GalleryRoute: typeof GalleryRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -314,13 +314,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/book': {
       id: '/book'
       path: '/book'
@@ -340,6 +333,13 @@ declare module '@tanstack/react-router' {
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -445,10 +445,10 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
-  BlogRoute: BlogRoute,
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
+  GalleryRoute: GalleryRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

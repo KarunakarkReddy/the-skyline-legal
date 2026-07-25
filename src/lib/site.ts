@@ -1,19 +1,22 @@
 export const site = {
   name: "Skyline Legal",
   tagline: "Integrity | Progress",
-  phones: ["+91 94834 17396", "+91 63620 26670"],
+  phones: ["+91 63620 26670", "+91 81237 17821",  "+91 86602 92676", "+91 9591 10997"],
   email: "contact@theskylinelegal.in",
   address: {
-    line1: "SKYLINE LEGAL Advocates & Solicitors",
-    line2: "Devatha Mansions #26, 3rd Floor, 5th Main Road",
-    line3: "Gandhinagar, Bengaluru — 560009"
+    line1: "SKYLINE LEGAL ",
+    line2: "Advocates & Solicitors",
+    line3: "Devatha Mansions,",
+    line4: "#26, 3rd Floor, 5th Main Road,",
+    line5: "Gandhinagar, Bengaluru — 560009"
   },
-  hours: "Mon – Sat · 10:00 AM – 7:00 PM",
+  hours: "Mon – Sat · 09:30 AM – 8:30 PM",
 };
 
 export type PracticeCategory =
   | "Constitutional & Public Law"
   | "Litigation & Disputes"
+  | "Family & Personal"
   | "Corporate & Commercial"
   | "Property & Real Estate"
   | "Regulatory & Tribunals"
@@ -31,15 +34,6 @@ export type PracticeArea = {
 
 export const practiceAreas: PracticeArea[] = [
   {
-    slug: "constitution-law",
-    title: "Constitution Law",
-    category: "Constitutional & Public Law",
-    featured: true,
-    desc: "Constitutional advocacy on fundamental rights, writ petitions, and public interest matters before the High Court of Karnataka and the Supreme Court of India.",
-    long: "Our constitutional practice covers Article 226 writ petitions, PILs, challenges to statutes and executive action, and appearances in matters involving fundamental and statutory rights. We assist individuals, companies, and public bodies with strategic constitutional litigation.",
-    keywords: "Constitutional Lawyer Bengaluru, Writ Petition Advocate, High Court Advocate",
-  },
-  {
     slug: "civil-law",
     title: "Civil Law",
     category: "Litigation & Disputes",
@@ -56,20 +50,28 @@ export const practiceAreas: PracticeArea[] = [
     keywords: "Criminal Lawyer Bengaluru, Criminal Defence Advocate",
   },
   {
-    slug: "commercial-law",
-    title: "Commercial Law",
-    category: "Corporate & Commercial",
-    desc: "Commercial disputes, contract enforcement, and litigation before Commercial Courts and High Courts.",
-    long: "We represent businesses in commercial suits, injunctions, and appellate work, including cross-border and multi-jurisdictional matters.",
-    keywords: "Commercial Lawyer Bengaluru, Commercial Court Advocate",
+    slug: "kat-matters",
+    title: "KSAT Matters",
+    category: "Regulatory & Tribunals",
+    desc: "Karnataka state government service and administrative matters before the KAT.",
+    long: "We represent state government employees and administrative litigants before the Karnataka Administrative Tribunal.",
+    keywords: "KAT Advocate Bengaluru, Karnataka Administrative Tribunal Lawyer",
   },
   {
-    slug: "corporate-law",
-    title: "Corporate Law",
-    category: "Corporate & Commercial",
-    desc: "Corporate advisory, governance, transactions, and dispute resolution for founders, SMEs, and mid-market companies.",
-    long: "From incorporation and shareholder agreements to M&A structuring and board advisory, we serve as long-term counsel to Indian and international businesses.",
-    keywords: "Corporate Lawyer Bengaluru, Corporate Legal Advisor",
+    slug: "cat-matters",
+    title: "CAT Matters",
+    category: "Regulatory & Tribunals",
+    desc: "Central government service matters before the Central Administrative Tribunal.",
+    long: "We represent central government employees in service, promotion, disciplinary, and pension disputes before the CAT Bengaluru Bench.",
+    keywords: "CAT Advocate Bengaluru, Central Administrative Tribunal Lawyer",
+  },
+  {
+    slug: "family-law",
+    title: "Family Law",
+    category: "Family & Personal",
+    desc: "Compassionate legal support for divorce, child custody, maintenance, domestic violence, succession, and family disputes.",
+    long: "From mutual consent divorce and contested matrimonial matters to child custody, maintenance, domestic violence cases, and inheritance disputes, we provide practical legal guidance with sensitivity and a focus on achieving the best possible outcome for our clients.",
+    keywords: "Family Lawyer Bengaluru, Divorce Lawyer Bengaluru, Child Custody Lawyer, Family Legal Advisor",
   },
   {
     slug: "property-law",
@@ -78,6 +80,22 @@ export const practiceAreas: PracticeArea[] = [
     desc: "Title diligence, conveyancing, partition, and land-record matters across Karnataka.",
     long: "We provide title reports, handle conveyancing, and litigate partition, injunction, and specific-performance suits involving immovable property.",
     keywords: "Property Lawyer Bengaluru, Title Verification Advocate",
+  },
+  {
+    slug: "sarfaesi-drt",
+    title: "SARFAESI (DRT)",
+    category: "Corporate & Commercial",
+    desc: "Debt Recovery Tribunal proceedings, SARFAESI enforcement, and secured-creditor disputes.",
+    long: "We represent borrowers, guarantors, and lenders in SARFAESI actions, DRT/DRAT proceedings, and related writ challenges.",
+    keywords: "SARFAESI Lawyer Bengaluru, DRT Advocate",
+  },
+  {
+    slug: "commercial-law",
+    title: "Commercial Law",
+    category: "Corporate & Commercial",
+    desc: "Commercial disputes, contract enforcement, and litigation before Commercial Courts and High Courts.",
+    long: "We represent businesses in commercial suits, injunctions, and appellate work, including cross-border and multi-jurisdictional matters.",
+    keywords: "Commercial Lawyer Bengaluru, Commercial Court Advocate",
   },
   {
     slug: "real-estate-law",
@@ -136,28 +154,12 @@ export const practiceAreas: PracticeArea[] = [
     keywords: "Tax Lawyer Bengaluru, GST Advocate",
   },
   {
-    slug: "sarfaesi-drt",
-    title: "SARFAESI (DRT)",
-    category: "Corporate & Commercial",
-    desc: "Debt Recovery Tribunal proceedings, SARFAESI enforcement, and secured-creditor disputes.",
-    long: "We represent borrowers, guarantors, and lenders in SARFAESI actions, DRT/DRAT proceedings, and related writ challenges.",
-    keywords: "SARFAESI Lawyer Bengaluru, DRT Advocate",
-  },
-  {
     slug: "company-law",
     title: "Company Law",
     category: "Corporate & Commercial",
     desc: "Company Act compliance, oppression and mismanagement, and NCLT litigation.",
     long: "We advise on Companies Act compliance and appear before the NCLT and NCLAT in oppression, mismanagement, and restructuring matters.",
     keywords: "Company Law Advocate, NCLT Lawyer Bengaluru",
-  },
-  {
-    slug: "insolvency-bankruptcy",
-    title: "Insolvency & Bankruptcy",
-    category: "Corporate & Commercial",
-    desc: "IBC proceedings for operational creditors, financial creditors, corporate debtors, and personal guarantors.",
-    long: "We handle Section 7, 9, and 10 petitions, resolution processes, and appeals under the Insolvency and Bankruptcy Code before the NCLT and NCLAT.",
-    keywords: "Insolvency Lawyer Bengaluru, IBC Advocate, NCLT Lawyer",
   },
   {
     slug: "debt-recovery",
@@ -171,17 +173,9 @@ export const practiceAreas: PracticeArea[] = [
     slug: "arbitration",
     title: "Arbitration",
     category: "Advisory & Drafting",
-    desc: "Domestic and institutional arbitration, Section 9/11/34/37 proceedings, and enforcement of awards.",
+    desc: "Domestic and institutional arbitration,proceedings, and enforcement of awards.",
     long: "We act as counsel in domestic and institutional arbitrations and handle interim measures, appointments, challenges, and enforcement before courts.",
     keywords: "Arbitration Lawyer Bengaluru, Arbitration Advocate",
-  },
-  {
-    slug: "construction-arbitration",
-    title: "Construction Arbitration",
-    category: "Advisory & Drafting",
-    desc: "EPC, infrastructure, and construction disputes under FIDIC and standard-form contracts.",
-    long: "We represent employers and contractors in claims arising from delay, variation, defects, and termination under construction contracts.",
-    keywords: "Construction Arbitration Lawyer, EPC Disputes Advocate",
   },
   {
     slug: "intellectual-property-rights",
@@ -200,14 +194,6 @@ export const practiceAreas: PracticeArea[] = [
     keywords: "Contract Drafting Advocate, Legal Drafting Bengaluru",
   },
   {
-    slug: "shareholder-disputes",
-    title: "Shareholder Disputes",
-    category: "Corporate & Commercial",
-    desc: "Oppression, mismanagement, promoter deadlock, and buyout disputes before the NCLT.",
-    long: "We advise founders, investors, and minority shareholders in disputes involving control, exits, and enforcement of shareholder agreements.",
-    keywords: "Shareholder Disputes Lawyer, NCLT Advocate Bengaluru",
-  },
-  {
     slug: "government-contract-litigation",
     title: "Government Contract Litigation",
     category: "Litigation & Disputes",
@@ -222,14 +208,6 @@ export const practiceAreas: PracticeArea[] = [
     desc: "Wrongful termination, non-compete, and executive-severance disputes.",
     long: "We represent senior executives and employers in disputes over termination, restrictive covenants, ESOPs, and workplace investigations.",
     keywords: "Employment Disputes Lawyer, Employment Advocate Bengaluru",
-  },
-  {
-    slug: "writ-petitions",
-    title: "Writ Petitions",
-    category: "Constitutional & Public Law",
-    desc: "Article 226/227 writs before the High Court of Karnataka and Article 32 before the Supreme Court.",
-    long: "We draft and argue writ petitions challenging state action, regulatory orders, and violations of fundamental and statutory rights.",
-    keywords: "Writ Petition Advocate, High Court Writ Lawyer",
   },
   {
     slug: "electricity-law",
@@ -254,22 +232,6 @@ export const practiceAreas: PracticeArea[] = [
     desc: "Comprehensive representation before the NCLT in company-law and insolvency proceedings.",
     long: "We appear in oppression, mismanagement, mergers, schemes of arrangement, and IBC proceedings before the NCLT Bengaluru and NCLAT.",
     keywords: "NCLT Lawyer Bengaluru, NCLT Advocate",
-  },
-  {
-    slug: "cat-matters",
-    title: "CAT Matters",
-    category: "Regulatory & Tribunals",
-    desc: "Central government service matters before the Central Administrative Tribunal.",
-    long: "We represent central government employees in service, promotion, disciplinary, and pension disputes before the CAT Bengaluru Bench.",
-    keywords: "CAT Advocate Bengaluru, Central Administrative Tribunal Lawyer",
-  },
-  {
-    slug: "kat-matters",
-    title: "KAT Matters",
-    category: "Regulatory & Tribunals",
-    desc: "Karnataka state government service and administrative matters before the KAT.",
-    long: "We represent state government employees and administrative litigants before the Karnataka Administrative Tribunal.",
-    keywords: "KAT Advocate Bengaluru, Karnataka Administrative Tribunal Lawyer",
   },
 ];
 

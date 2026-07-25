@@ -104,9 +104,19 @@ function Contact() {
               <h2 className="font-display text-2xl text-gold">Our Chambers</h2>
               <span className="gold-rule mt-3" />
               <ul className="mt-6 space-y-5 text-sm">
-                <li className="flex gap-4"><Phone size={18} className="text-gold shrink-0 mt-0.5" /><div>{site.phones.map(p => <div key={p}>{p}</div>)}</div></li>
+                <li className="flex gap-4 items-start">
+                  <Phone size={18} className="text-gold shrink-0 mt-1" />
+
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                    {site.phones.map((p) => (
+                      <div key={p} className="whitespace-nowrap">
+                        {p}
+                      </div>
+                    ))}
+                  </div>
+                </li>
                 <li className="flex gap-4"><Mail size={18} className="text-gold shrink-0 mt-0.5" />{site.email}</li>
-                <li className="flex gap-4"><MapPin size={18} className="text-gold shrink-0 mt-0.5" /><div><div>{site.address.line1}</div><div>{site.address.line2}</div><div>{site.address.line3}</div></div></li>
+                <li className="flex gap-4"><MapPin size={18} className="text-gold shrink-0 mt-0.5" /><div><div>{site.address.line1}</div><div>{site.address.line2}</div><div>{site.address.line3}</div><div>{site.address.line4}</div><div>{site.address.line5}</div></div></li>
                 <li className="flex gap-4"><Clock size={18} className="text-gold shrink-0 mt-0.5" />{site.hours}</li>
               </ul>
             </div>

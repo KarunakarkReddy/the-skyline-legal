@@ -57,34 +57,38 @@ function Profile() {
   return (
     <PageShell>
       <section className="pt-36 md:pt-44 pb-20">
-        <div className="container-luxe grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+        <div className="container-luxe grid gap-16 lg:grid-cols-[380px_1fr] items-start">
           <div className="border border-gold/25 bg-navy/40 relative">
             <img
               src={p.photo}
               alt={`${p.name} — ${p.title}, Skyline Legal`}
-              className="w-full aspect-[4/5] object-cover"
+              className="w-full aspect-[4/5] object-cover object-top"
             />
             <div className="absolute inset-x-0 bottom-0 px-4 py-3 bg-navy-deep/85 border-t border-gold/25 text-center">
               <div className="text-[0.65rem] tracking-[0.28em] uppercase text-gold-dim">
-                Photograph placeholder — final portrait to be uploaded
               </div>
             </div>
           </div>
 
           <div className="animate-fade-up">
             <div className="eyebrow">{p.title}</div>
-            <h1 className="mt-3 font-display text-4xl md:text-6xl text-gradient-gold">
+            <h1 className="mt-2 font-display text-4xl md:text-5xl leading-tight tracking-wide text-gradient-gold">
               {p.name}
             </h1>
             <span className="gold-rule mt-5" />
 
-            <div className="mt-6 space-y-4 text-foreground/80 leading-relaxed">
+            <div className="mt-12 max-w-3xl">
               {p.bio.map((para: string, i: number) => (
-                <p key={i}>{para}</p>
+                <p
+                  key={i}
+                  className="mb-8 text-lg leading-9 text-foreground/80 text-justify"
+                >
+                  {para}
+                </p>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href={`tel:${p.phone.replace(/\s/g, "")}`}
                 className="btn-gold"
@@ -96,10 +100,9 @@ function Profile() {
               </Link>
             </div>
 
-            <div className="mt-12 grid gap-8 sm:grid-cols-2">
+            <div className="mt-16 grid gap-10 sm:grid-cols-2">
               <Section title="Practice Areas" items={p.practiceAreas} />
               <Section title="Courts & Tribunals" items={p.courts} />
-              <Section title="Languages" items={p.languages} />
             </div>
           </div>
         </div>
@@ -108,7 +111,7 @@ function Profile() {
       <section className="py-16 border-t border-gold/10 bg-navy/30">
         <div className="container-luxe">
           <div className="eyebrow">Other Partners</div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {partners
               .filter((x) => x.slug !== p.slug)
               .map((x) => (

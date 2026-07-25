@@ -8,10 +8,10 @@ const links = [
   { to: "/about", label: "About" },
   { to: "/partners", label: "Partners" },
   { to: "/practice-areas", label: "Practice Areas" },
-  { to: "/blog", label: "Blog" },
+  { to: "/gallery", label: "gallery" },
   { to: "/faqs", label: "FAQs" },
   { to: "/contact", label: "Contact" },
-] as const;
+] satisfies readonly { to: string; label: string }[];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,7 +34,7 @@ export function Navbar() {
     >
       <div className="container-luxe flex h-20 items-center justify-between">
         <Link to="/" aria-label="Skyline Legal home">
-          <Logo size={38} />
+          <Logo size={60} />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

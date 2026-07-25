@@ -11,6 +11,7 @@ import { practiceAreas, site } from "@/lib/site";
 import teamGroup from "@/assets/groupimage.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/sllogohead.png";
+import lawSymbol from "@/assets/law-symbol.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,9 +42,7 @@ export const Route = createFileRoute("/")({
 
 const values = [
   { icon: ShieldCheck, label: "Integrity" },
-  { icon: Award, label: "Experience" },
-  { icon: Users, label: "Trust" },
-  { icon: CheckCircle2, label: "Results" },
+  { icon: Award, label: "Progress" },
 ];
 
 const whyUs = [
@@ -151,7 +150,20 @@ function Home() {
           <h1 className="mt-8 font-display text-[2.75rem] sm:text-6xl md:text-7xl tracking-[0.14em] text-gradient-gold">
             SKYLINE LEGAL
           </h1>
-          <span className="gold-rule mx-auto mt-6" />
+
+          <div className="mt-6 flex justify-center">
+            <img
+              src={lawSymbol}
+              alt="Law Symbol"
+              className="w-16 h-16 md:w-24 md:h-24 object-contain"
+            />
+          </div>
+          
+          <div className="mt-6">
+            <p className="text-lg md:text-2xl tracking-[0.35em] uppercase text-gold font-medium">
+              Advocates &amp; Solicitors
+            </p>
+          </div>
           <p className="mt-6 text-xs sm:text-sm tracking-[0.42em] uppercase text-gold-dim">
             Integrity &nbsp;|&nbsp; Progress
           </p>
@@ -173,13 +185,19 @@ function Home() {
             <h2 className="mt-4 font-display text-4xl md:text-5xl text-gradient-gold">
               About Skyline Legal
             </h2>
-            <span className="gold-rule mt-5" />
-            <p className="mt-6 text-foreground/75 leading-relaxed">
-              Skyline Legal is a partnership of experienced advocates committed to providing legal excellence across civil, criminal, corporate, property, family, consumer, and commercial matters.
-            </p>
-            <p className="mt-4 text-foreground/70 leading-relaxed">
-              We believe in <span className="text-gold">integrity</span>, transparency, a client-first approach, and ethical legal practice — the values that have defined our chambers from the outset.
-            </p>
+            <span className="gold-rule mt-6 block w-16"></span>
+
+              <p className="mt-8 text-lg leading-9 text-foreground/75 text-justify">
+                Skyline Legal is a partnership of experienced advocates committed to
+                providing legal excellence across civil, criminal, corporate, property,
+                family, consumer, and commercial matters.
+              </p>
+
+              <p className="mt-6 text-lg leading-9 text-foreground/75 text-justify">
+                We believe in <span className="text-gold">integrity</span>, transparency,
+                a client-first approach, and ethical legal practice—the values that have
+                defined our chambers from the outset.
+              </p>
             <Link to="/about" className="btn-outline-gold mt-8">
               Learn More <ArrowRight size={14} />
             </Link>
@@ -232,7 +250,7 @@ function Home() {
                   <div className="mt-1 text-[0.7rem] tracking-[0.28em] uppercase text-gold-dim">
                     {p.title}
                   </div>
-                  <p className="mt-4 text-sm text-foreground/70 leading-relaxed flex-1">
+                  <p className="mt-4 text-sm leading-7 text-foreground/70 min-h-[180px]">
                     {p.short}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-1.5">
@@ -259,47 +277,14 @@ function Home() {
         </div>
       </section>
 
-      {/* LEADERSHIP TEAM */}
-      <section className="py-24 md:py-32">
-        <div className="container-luxe text-center">
-          <div className="eyebrow">Portrait</div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl text-gradient-gold">
-            Our Leadership Team
-          </h2>
-          <span className="gold-rule mx-auto mt-5" />
-          <p className="mx-auto mt-6 max-w-2xl text-foreground/70 leading-relaxed">
-            The partners of Skyline Legal — a united bench of advocates committed to integrity, rigour, and results.
-          </p>
-        </div>
-        <div className="container-luxe mt-14">
-          <div className="relative border border-gold/25 overflow-hidden bg-navy/40">
-            <img
-              src={teamGroup}
-              alt="The partners of Skyline Legal — Leadership Team"
-              loading="lazy"
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute inset-x-0 bottom-0 px-6 py-3 bg-navy-deep/85 border-t border-gold/25 text-center">
-              <div className="text-[0.65rem] tracking-[0.28em] uppercase text-gold-dim">
-                Group photo of advocates
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* PRACTICE AREAS */}
       <section className="py-24 md:py-32 bg-navy/30 border-y border-gold/10">
         <div className="container-luxe">
           <div className="text-center">
-            <div className="eyebrow">Expertise</div>
             <h2 className="mt-4 font-display text-4xl md:text-5xl text-gradient-gold">
               Practice Areas
             </h2>
             <span className="gold-rule mx-auto mt-5" />
-            <p className="mx-auto mt-6 max-w-2xl text-foreground/70 leading-relaxed">
-              Thirty areas of law — from constitutional advocacy to insolvency and arbitration — searchable and organised by category.
-            </p>
           </div>
 
           {(() => {
@@ -504,8 +489,12 @@ function Home() {
               <ul className="mt-6 space-y-5 text-sm">
                 <li className="flex gap-4">
                   <Phone size={18} className="text-gold shrink-0 mt-0.5" />
-                  <div>
-                    {site.phones.map((p) => <div key={p}>{p}</div>)}
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 min-w-[340px]">
+                    {site.phones.map((p) => (
+                      <div key={p} className="whitespace-nowrap">
+                        {p}
+                      </div>
+                    ))}
                   </div>
                 </li>
                 <li className="flex gap-4">
@@ -518,6 +507,8 @@ function Home() {
                     <div>{site.address.line1}</div>
                     <div>{site.address.line2}</div>
                     <div>{site.address.line3}</div>
+                    <div>{site.address.line4}</div>
+                    <div>{site.address.line5}</div>
                   </div>
                 </li>
                 <li className="flex gap-4">

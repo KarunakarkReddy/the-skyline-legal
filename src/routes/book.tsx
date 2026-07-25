@@ -19,11 +19,11 @@
   const times = ["10:00 AM", "11:30 AM", "01:00 PM", "03:00 PM", "04:30 PM", "06:00 PM"];
 
   const practiceAreaOptions = [
-    "Constitutional Law", "Civil Law", "Criminal Law", "Commercial Law", "Corporate Law",
+    "Civil Law", "Criminal Law", "Commercial Law",
     "Property Law", "Real Estate Law", "Consumer Protection", "Administrative Law",
     "Service Law", "Labour & Employment Law", "Tax Law", "SARFAESI (DRT)",
-    "Company Law", "Arbitration", "Intellectual Property Rights", "Contract Drafting",
-    "Writ Petitions", "RERA Matters", "NCLT Matters", "Other",
+    "Company Law", "Intellectual Property Rights", "Contract Drafting",
+    "RERA Matters", "NCLT Matters", "Other",
   ];
 
   function Book() {
@@ -83,15 +83,7 @@
               </div>
             ) : (
               <form className="border border-gold/25 p-8 md:p-10 bg-navy/40 space-y-6" onSubmit={handleSubmit}>
-                <div>
-                  <label className="eyebrow block mb-2">Choose Advocate</label>
-                  <select name="advocate" required className="w-full bg-transparent border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold">
-                    <option value="">Select a partner…</option>
-                    {partners.map((p) => (
-                      <option key={p.slug} value={p.slug} className="bg-navy-deep">{p.name}</option>
-                    ))}
-                  </select>
-                </div>
+              
 
                 <div>
                   <label className="eyebrow block mb-2">Practice Area</label>

@@ -16,9 +16,7 @@ export const Route = createFileRoute("/about")({
 
 const values = [
   { icon: ShieldCheck, title: "Integrity", desc: "We advise honestly, even when it is not the easier answer." },
-  { icon: Award, title: "Experience", desc: "Decades of collective courtroom and advisory experience." },
-  { icon: Users, title: "Client-First", desc: "Your objectives shape every strategic decision we take." },
-  { icon: CheckCircle2, title: "Ethical Practice", desc: "Discretion, confidentiality, and professional standards without compromise." },
+  { icon: Award, title: "Progress", desc: "Innovative legal solutions designed to help clients move forward with confidence." },
 ];
 
 function About() {
@@ -31,7 +29,7 @@ function About() {
       />
       <section className="py-20 md:py-28">
         <div className="container-luxe grid gap-12 lg:grid-cols-2">
-          <div className="space-y-5 text-foreground/75 leading-relaxed">
+          <div className="space-y-5 text-foreground/75 leading-relaxed text-justify">
             <p>
               Skyline Legal was founded on a simple conviction: that clients deserve counsel that is prepared, principled, and personally attentive to their matter — from first consultation to final resolution.
             </p>

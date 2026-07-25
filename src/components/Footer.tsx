@@ -33,7 +33,7 @@ export function Footer() {
               ["/about", "About"],
               ["/partners", "Partners"],
               ["/practice-areas", "Practice Areas"],
-              ["/blog", "Blog"],
+              ["/Gallery", "Gallery"],
               ["/faqs", "FAQs"],
               ["/contact", "Contact"],
             ].map(([to, label]) => (
@@ -64,9 +64,12 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-foreground/75">
             <li className="flex gap-3">
               <Phone size={15} className="text-gold shrink-0 mt-0.5" />
-              <div>
+
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2">
                 {site.phones.map((p) => (
-                  <div key={p}>{p}</div>
+                  <div key={p} className="whitespace-nowrap">
+                    {p}
+                  </div>
                 ))}
               </div>
             </li>
@@ -80,6 +83,8 @@ export function Footer() {
                 <div>{site.address.line1}</div>
                 <div>{site.address.line2}</div>
                 <div>{site.address.line3}</div>
+                <div>{site.address.line4}</div>
+                <div>{site.address.line5}</div>
               </div>
             </li>
           </ul>
