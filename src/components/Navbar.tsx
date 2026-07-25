@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
+import lawSymbol from "@/assets/law-symbol.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -51,10 +52,16 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-5">
           <Link to="/book" className="btn-gold">
             Book Consultation
           </Link>
+
+          <img
+            src={lawSymbol}
+            alt="Law Symbol"
+            className="w-13 h-13 object-contain ml-6"
+          />
         </div>
 
         <button

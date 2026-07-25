@@ -151,14 +151,6 @@ function Home() {
             SKYLINE LEGAL
           </h1>
 
-          <div className="mt-6 flex justify-center">
-            <img
-              src={lawSymbol}
-              alt="Law Symbol"
-              className="w-16 h-16 md:w-24 md:h-24 object-contain"
-            />
-          </div>
-          
           <div className="mt-6">
             <p className="text-lg md:text-2xl tracking-[0.35em] uppercase text-gold font-medium">
               Advocates &amp; Solicitors

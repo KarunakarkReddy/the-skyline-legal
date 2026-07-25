@@ -24,35 +24,35 @@ export const Route = createFileRoute("/gallery")({
 
 const galleryImages = [
   {
-    image: "public/gallery/pic9.jpg",
+    image: "/gallery/pic9.jpg",
     title: "Waiting Area",
   },
   {
-    image: "public/gallery/pic6.jpg",
+    image: "/gallery/pic6.jpg",
     title: "Waiting Area",
   },
   {
-    image: "public/gallery/pic3.jpg",
+    image: "/gallery/pic3.jpg",
     title: "Corridor",
   },
   {
-    image: "public/gallery/pic1.jpg",
+    image: "/gallery/pic1.jpg",
     title: "Conference Hall",
   },
   {
-    image: "public/gallery/pic8.jpg",
+    image: "/gallery/pic8.jpg",
     title: "Rapid Conference Room",
   },
   {
-    image: "public/gallery/pic4.jpg",
+    image: "/gallery/pic4.jpg",
     title: "File Room",
   },
   {
-    image: "public/gallery/pic5.jpg",
+    image: "/gallery/pic5.jpg",
     title: "Work Station",
   },
   {
-    image: "public/gallery/pic7.jpg",
+    image: "/gallery/pic7.jpg",
     title: "Conference Hall",
   },
 ];
