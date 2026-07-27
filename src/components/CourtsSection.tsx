@@ -5,13 +5,12 @@ export function CourtsSection() {
     <section className="py-24 md:py-32 border-y border-gold/10">
       <div className="container-luxe">
         <div className="text-center">
-          <div className="eyebrow">Forums</div>
           <h2 className="mt-4 font-display text-4xl md:text-5xl text-gradient-gold">
             Courts &amp; Tribunals We Represent Before
           </h2>
           <span className="gold-rule mx-auto mt-5" />
           <p className="mx-auto mt-6 max-w-2xl text-foreground/70 leading-relaxed">
-            From the Supreme Court of India to specialised tribunals, our advocates appear across the judicial forums most relevant to our clients.
+          From Trial Courts to the Supreme Court of India, our advocates appear across the all judicial courts most relevant to our clients.
           </p>
         </div>
 

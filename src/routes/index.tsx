@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { CourtsSection } from "@/components/CourtsSection";
-import { partners } from "@/lib/partners";
+import { partners } from "@/lib/our-team";
 import { practiceAreas, site } from "@/lib/site";
 import teamGroup from "@/assets/groupimage.png";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -16,11 +16,11 @@ import lawSymbol from "@/assets/law-symbol.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Skyline Legal — Advocates in Bengaluru | High Court, NCLT, CAT, KAT, RERA" },
+      { title: "Skyline Legal — Advocates in Bengaluru | High Court, NCLT, CAT, KSAT, RERA" },
       {
         name: "description",
         content:
-          "Skyline Legal is a Bengaluru partnership of advocates practising constitutional, civil, criminal, corporate, property, RERA, NCLT, CAT, KAT, SARFAESI, arbitration, and IPR law.",
+          "Skyline Legal is a Bengaluru partnership of advocates practising constitutional, civil, criminal, corporate, property, RERA, NCLT, CAT, KSAT, SARFAESI, arbitration, and IPR law.",
       },
       {
         name: "keywords",
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "A partnership of advocates providing trusted counsel across the High Court of Karnataka, Supreme Court, NCLT, CAT, KAT, and RERA.",
+          "A partnership of advocates providing trusted counsel across the High Court of Karnataka, Supreme Court, NCLT, CAT, KSAT, and RERA.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -65,19 +65,19 @@ const testimonials = [
   {
     quote:
       "Skyline Legal handled my property matter with remarkable diligence. Their advice was clear, and the outcome exceeded expectations.",
-    name: "R. Iyer",
+    name: "Munireddy",
     role: "Property Client",
   },
   {
     quote:
       "Composed, prepared, and utterly professional in court. I could not have asked for better representation.",
-    name: "S. Menon",
+    name: "In2IT Enterprises Pvt.Ltd.",
     role: "Corporate Client",
   },
   {
     quote:
       "They treated a difficult family dispute with sensitivity and discretion. Genuinely a client-first firm.",
-    name: "A. Kulkarni",
+    name: "Kumar Manish Ranjan",
     role: "Family Matter",
   },
 ];
@@ -256,7 +256,7 @@ function Home() {
                     ))}
                   </div>
                   <Link
-                    to="/partners/$slug"
+                    to="/our-team/$slug"
                     params={{ slug: p.slug }}
                     className="mt-6 inline-flex items-center gap-2 text-[0.72rem] tracking-[0.28em] uppercase text-gold hover:text-gold-soft"
                   >
@@ -350,7 +350,6 @@ function Home() {
       <section className="py-24 md:py-32">
         <div className="container-luxe">
           <div className="text-center">
-            <div className="eyebrow">The Skyline Difference</div>
             <h2 className="mt-4 font-display text-4xl md:text-5xl text-gradient-gold">
               Why Choose Skyline Legal
             </h2>

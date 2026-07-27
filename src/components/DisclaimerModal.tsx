@@ -55,7 +55,6 @@ export function DisclaimerModal() {
         </div>
         <div className="px-6 sm:px-10 py-8">
           <div className="text-center">
-            <div className="eyebrow text-gold-dim">Notice</div>
             <h2
               id="disclaimer-title"
               className="mt-2 font-display text-2xl sm:text-3xl text-gradient-gold tracking-wide"

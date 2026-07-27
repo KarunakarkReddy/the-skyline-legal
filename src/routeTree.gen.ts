@@ -17,14 +17,14 @@ import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as OurTeamRouteImport } from './routes/our-team'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
-import { Route as PartnersIndexRouteImport } from './routes/partners.index'
-import { Route as PartnersSlugRouteImport } from './routes/partners.$slug'
+import { Route as OurTeamSlugRouteImport } from './routes/our-team.$slug'
 import { Route as PracticeAreasIndexRouteImport } from './routes/practice-areas.index'
 import { Route as PracticeAreasSlugRouteImport } from './routes/practice-areas.$slug'
 import { Route as ApiPublicBookingsRouteImport } from './routes/api/public/bookings'
@@ -69,6 +69,11 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OurTeamRoute = OurTeamRouteImport.update({
+  id: '/our-team',
+  path: '/our-team',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
@@ -99,15 +104,10 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const PartnersIndexRoute = PartnersIndexRouteImport.update({
-  id: '/partners/',
-  path: '/partners/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PartnersSlugRoute = PartnersSlugRouteImport.update({
-  id: '/partners/$slug',
-  path: '/partners/$slug',
-  getParentRoute: () => rootRouteImport,
+const OurTeamSlugRoute = OurTeamSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => OurTeamRoute,
 } as any)
 const PracticeAreasIndexRoute = PracticeAreasIndexRouteImport.update({
   id: '/practice-areas/',
@@ -138,15 +138,15 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
+  '/our-team': typeof OurTeamRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/admin': typeof AuthenticatedAdminRoute
-  '/partners/$slug': typeof PartnersSlugRoute
+  '/our-team/$slug': typeof OurTeamSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
-  '/partners/': typeof PartnersIndexRoute
   '/practice-areas/': typeof PracticeAreasIndexRoute
   '/api/public/bookings': typeof ApiPublicBookingsRoute
   '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
@@ -159,15 +159,15 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
+  '/our-team': typeof OurTeamRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/admin': typeof AuthenticatedAdminRoute
-  '/partners/$slug': typeof PartnersSlugRoute
+  '/our-team/$slug': typeof OurTeamSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
-  '/partners': typeof PartnersIndexRoute
   '/practice-areas': typeof PracticeAreasIndexRoute
   '/api/public/bookings': typeof ApiPublicBookingsRoute
   '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
@@ -182,15 +182,15 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
+  '/our-team': typeof OurTeamRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
-  '/partners/$slug': typeof PartnersSlugRoute
+  '/our-team/$slug': typeof OurTeamSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
-  '/partners/': typeof PartnersIndexRoute
   '/practice-areas/': typeof PracticeAreasIndexRoute
   '/api/public/bookings': typeof ApiPublicBookingsRoute
   '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
@@ -205,15 +205,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/gallery'
+    | '/our-team'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/admin'
-    | '/partners/$slug'
+    | '/our-team/$slug'
     | '/practice-areas/$slug'
-    | '/partners/'
     | '/practice-areas/'
     | '/api/public/bookings'
     | '/api/public/enquiries'
@@ -226,15 +226,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/gallery'
+    | '/our-team'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/admin'
-    | '/partners/$slug'
+    | '/our-team/$slug'
     | '/practice-areas/$slug'
-    | '/partners'
     | '/practice-areas'
     | '/api/public/bookings'
     | '/api/public/enquiries'
@@ -248,15 +248,15 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/gallery'
+    | '/our-team'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/_authenticated/admin'
-    | '/partners/$slug'
+    | '/our-team/$slug'
     | '/practice-areas/$slug'
-    | '/partners/'
     | '/practice-areas/'
     | '/api/public/bookings'
     | '/api/public/enquiries'
@@ -271,14 +271,13 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
   GalleryRoute: typeof GalleryRoute
+  OurTeamRoute: typeof OurTeamRouteWithChildren
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
-  PartnersSlugRoute: typeof PartnersSlugRoute
   PracticeAreasSlugRoute: typeof PracticeAreasSlugRoute
-  PartnersIndexRoute: typeof PartnersIndexRoute
   PracticeAreasIndexRoute: typeof PracticeAreasIndexRoute
   ApiPublicBookingsRoute: typeof ApiPublicBookingsRoute
   ApiPublicEnquiriesRoute: typeof ApiPublicEnquiriesRoute
@@ -342,6 +341,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/our-team': {
+      id: '/our-team'
+      path: '/our-team'
+      fullPath: '/our-team'
+      preLoaderRoute: typeof OurTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy-policy': {
       id: '/privacy-policy'
       path: '/privacy-policy'
@@ -384,19 +390,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/partners/': {
-      id: '/partners/'
-      path: '/partners'
-      fullPath: '/partners/'
-      preLoaderRoute: typeof PartnersIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/partners/$slug': {
-      id: '/partners/$slug'
-      path: '/partners/$slug'
-      fullPath: '/partners/$slug'
-      preLoaderRoute: typeof PartnersSlugRouteImport
-      parentRoute: typeof rootRouteImport
+    '/our-team/$slug': {
+      id: '/our-team/$slug'
+      path: '/$slug'
+      fullPath: '/our-team/$slug'
+      preLoaderRoute: typeof OurTeamSlugRouteImport
+      parentRoute: typeof OurTeamRoute
     }
     '/practice-areas/': {
       id: '/practice-areas/'
@@ -440,6 +439,17 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
+interface OurTeamRouteChildren {
+  OurTeamSlugRoute: typeof OurTeamSlugRoute
+}
+
+const OurTeamRouteChildren: OurTeamRouteChildren = {
+  OurTeamSlugRoute: OurTeamSlugRoute,
+}
+
+const OurTeamRouteWithChildren =
+  OurTeamRoute._addFileChildren(OurTeamRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
@@ -449,14 +459,13 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
   GalleryRoute: GalleryRoute,
+  OurTeamRoute: OurTeamRouteWithChildren,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
-  PartnersSlugRoute: PartnersSlugRoute,
   PracticeAreasSlugRoute: PracticeAreasSlugRoute,
-  PartnersIndexRoute: PartnersIndexRoute,
   PracticeAreasIndexRoute: PracticeAreasIndexRoute,
   ApiPublicBookingsRoute: ApiPublicBookingsRoute,
   ApiPublicEnquiriesRoute: ApiPublicEnquiriesRoute,

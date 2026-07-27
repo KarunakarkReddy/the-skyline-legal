@@ -44,10 +44,6 @@ const galleryImages = [
     title: "Rapid Conference Room",
   },
   {
-    image: "/gallery/pic4.jpg",
-    title: "File Room",
-  },
-  {
     image: "/gallery/pic5.jpg",
     title: "Work Station",
   },

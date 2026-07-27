@@ -70,7 +70,7 @@ export const partners: Partner[] = [
       "Consumer Litigation",
     ],
     bio: [
-      "He represents clients in several high value service, employee contract disputes and to award of government contracts, real estate actions, inheritance and succession suits,   civil and criminal cases at the district and state level, disciplinary cases and consumer briefs.",
+      "He represents clients in several high value service, employee contract disputes and to award of government contracts, real estate actions, inheritance and succession suits,civil and criminal cases at the district and state level, disciplinary cases and consumer briefs.",
       "He also represents both borrowers and lenders in restructuring actions, and has significant experience in handling complex petitions filed in relation to both private and public limited companies in the High Court of Karnataka.",
       "He handles education related matters before the Principal Secretary, Commissioner, and Director of the School Education and Literacy Department.",
       "He handles Lokayukta related matters before the Lokayukta Court at Bengaluru.",

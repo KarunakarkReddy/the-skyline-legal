@@ -15,7 +15,7 @@ export const Route = createFileRoute("/practice-areas/")({
       {
         name: "description",
         content:
-          "Constitutional, civil, criminal, commercial, corporate, property, RERA, NCLT, CAT, KAT, SARFAESI, arbitration, and IPR practice by Skyline Legal advocates in Bengaluru.",
+          "Constitutional, civil, criminal, commercial, corporate, property, RERA, NCLT, CAT, KSAT, SARFAESI, arbitration, and IPR practice by Skyline Legal advocates in Bengaluru.",
       },
       { property: "og:title", content: "Practice Areas — Skyline Legal" },
       {

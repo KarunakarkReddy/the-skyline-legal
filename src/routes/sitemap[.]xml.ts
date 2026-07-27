@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { partners } from "@/lib/partners";
+import { partners } from "@/lib/our-team";
 import { practiceAreas } from "@/lib/site";
 
 const BASE_URL = "";

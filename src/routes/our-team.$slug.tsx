@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageShell } from "@/components/PageShell";
-import { getPartner, partners } from "@/lib/partners";
+import { getPartner, partners } from "@/lib/our-team";
 import { Phone, Calendar } from "lucide-react";
 
-export const Route = createFileRoute("/partners/$slug")({
+export const Route = createFileRoute("/our-team/$slug")({
   loader: ({ params }) => {
     const partner = getPartner(params.slug);
     if (!partner) throw notFound();
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/partners/$slug")({
         { property: "og:title", content: `${p.name} — ${p.title}, Skyline Legal` },
         { property: "og:description", content: p.short },
         { property: "og:type", content: "profile" },
-        { property: "og:url", content: `/partners/${params.slug}` },
+        { property: "og:url", content: `/our-team/${params.slug}` },
       ],
       links: [{ rel: "canonical", href: `/partners/${params.slug}` }],
     };
@@ -43,9 +43,9 @@ export const Route = createFileRoute("/partners/$slug")({
   notFoundComponent: () => (
     <PageShell>
       <div className="container-luxe py-40 text-center">
-        <h1 className="font-display text-4xl text-gold">Partner not found</h1>
-        <Link to="/partners" className="btn-outline-gold mt-8 inline-flex">
-          View all partners
+        <h1 className="font-display text-4xl text-gold">Team member not found</h1>
+        <Link to="/our-team" className="btn-outline-gold mt-8 inline-flex">
+          View all team members
         </Link>
       </div>
     </PageShell>

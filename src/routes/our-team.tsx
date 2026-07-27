@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell, PageHeader } from "@/components/PageShell";
-import { partners, associates } from "@/lib/partners";
+import { partners, associates } from "@/lib/our-team";
 import { ArrowRight } from "lucide-react";
 
-export const Route = createFileRoute("/partners/")({
+export const Route = createFileRoute("/our-team")({
   head: () => ({
     meta: [
       { title: "Partners — Skyline Legal" },

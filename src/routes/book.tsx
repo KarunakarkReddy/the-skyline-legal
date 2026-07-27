@@ -1,7 +1,7 @@
   import { createFileRoute } from "@tanstack/react-router";
   import { useState } from "react";
   import { PageShell, PageHeader } from "@/components/PageShell";
-  import { partners } from "@/lib/partners";
+  import { partners } from "@/lib/our-team";
   import { CheckCircle2 } from "lucide-react";
 
   export const Route = createFileRoute("/book")({

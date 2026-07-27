@@ -7,7 +7,7 @@ import lawSymbol from "@/assets/law-symbol.png";
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/partners", label: "Partners" },
+  { to: "/our-team", label: "Our Team" },
   { to: "/practice-areas", label: "Practice Areas" },
   { to: "/gallery", label: "gallery" },
   { to: "/faqs", label: "FAQs" },
@@ -38,12 +38,12 @@ export function Navbar() {
           <Logo size={60} />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="text-[0.78rem] tracking-[0.22em] uppercase text-foreground/85 hover:text-gold transition-colors"
+              className="whitespace-nowrap text-[0.75rem] xl:text-[0.78rem] tracking-[0.16em] xl:tracking-[0.22em] uppercase text-foreground/85 hover:text-gold transition-colors"
               activeProps={{ className: "text-gold" }}
               activeOptions={{ exact: l.to === "/" }}
             >
@@ -52,15 +52,18 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-5">
-          <Link to="/book" className="btn-gold">
+        <div className="hidden lg:flex items-center gap-3 ml-4">
+          <Link
+            to="/book"
+            className="btn-gold whitespace-nowrap px-4 py-2.5 text-[0.72rem] tracking-[0.18em]"
+          >
             Book Consultation
           </Link>
 
           <img
             src={lawSymbol}
             alt="Law Symbol"
-            className="w-13 h-13 object-contain ml-6"
+            className="w-12 h-12 xl:w-14 xl:h-14 object-contain ml-2 xl:ml-4"
           />
         </div>
 

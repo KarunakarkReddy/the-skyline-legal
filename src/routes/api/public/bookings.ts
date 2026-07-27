@@ -5,7 +5,7 @@ const BookingSchema = z.object({
   name: z.string().trim().min(1).max(120),
   phone: z.string().trim().min(6).max(30),
   email: z.string().trim().email().max(200),
-  advocate: z.string().trim().min(1).max(120),
+  advocate: z.string().trim().max(120).optional().default(""),
   practiceArea: z.string().trim().max(120).optional().default(""),
   appointmentDate: z.string().trim().regex(/^\d{4}-\d{2}-\d{2}$/),
   appointmentTime: z.string().trim().min(1).max(30),
@@ -24,7 +24,14 @@ export const Route = createFileRoute("/api/public/bookings")({
         }
         const parsed = BookingSchema.safeParse(body);
         if (!parsed.success) {
-          return Response.json({ error: "Invalid input", issues: parsed.error.flatten() }, { status: 400 });
+          console.log(parsed.error.flatten());
+
+          return Response.json(
+            {
+              error: parsed.error.flatten(),
+            },
+            { status: 400 }
+          );
         }
         const b = parsed.data;
 
