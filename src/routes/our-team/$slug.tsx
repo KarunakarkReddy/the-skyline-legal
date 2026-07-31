@@ -29,7 +29,7 @@ export const Route = createFileRoute("/our-team/$slug")({
         { property: "og:type", content: "profile" },
         { property: "og:url", content: `/our-team/${params.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/partners/${params.slug}` }],
+      links: [{ rel: "canonical", href: `/our-team/${params.slug}` }],
     };
   },
   component: Profile,
@@ -117,7 +117,7 @@ function Profile() {
               .map((x) => (
                 <Link
                   key={x.slug}
-                  to="/partners/$slug"
+                  to="/our-team/$slug"
                   params={{ slug: x.slug }}
                   className="group flex items-center gap-4 border border-gold/20 p-4 hover:border-gold/60 transition"
                 >

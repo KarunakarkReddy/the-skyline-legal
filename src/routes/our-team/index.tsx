@@ -3,13 +3,13 @@ import { PageShell, PageHeader } from "@/components/PageShell";
 import { partners, associates } from "@/lib/our-team";
 import { ArrowRight } from "lucide-react";
 
-export const Route = createFileRoute("/our-team")({
+export const Route = createFileRoute("/our-team/")({
   head: () => ({
     meta: [
-      { title: "Partners — Skyline Legal" },
-      { name: "description", content: "Meet the four advocates who lead Skyline Legal's practice across civil, criminal, corporate, and family matters." },
-      { property: "og:title", content: "Meet Our Partners — Skyline Legal" },
-      { property: "og:description", content: "A partnership of four advocates. One standard of practice." },
+      { title: "Our Team — Skyline Legal" },
+      { name: "description", content: "Meet the talented advocates and professionals who make up the Skyline Legal team." },
+      { property: "og:title", content: "Meet Our Team — Skyline Legal" },
+      { property: "og:description", content: "A diverse group of legal professionals dedicated to providing exceptional service." },
     ],
   }),
   component: Partners,
@@ -40,7 +40,7 @@ function Partners() {
                 <div className="mt-1 text-[0.7rem] tracking-[0.28em] uppercase text-gold-dim">{p.title}</div>
                 <p className="mt-4 text-sm text-foreground/70 leading-relaxed">{p.short}</p>
                 <Link
-                  to="/partners/$slug"
+                  to="/our-team/$slug"
                   params={{ slug: p.slug }}
                   className="mt-6 inline-flex items-center gap-2 text-[0.72rem] tracking-[0.28em] uppercase text-gold hover:text-gold-soft"
                 >

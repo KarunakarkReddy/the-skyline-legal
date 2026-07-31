@@ -17,14 +17,14 @@ import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as OurTeamRouteImport } from './routes/our-team'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
-import { Route as OurTeamSlugRouteImport } from './routes/our-team.$slug'
+import { Route as OurTeamIndexRouteImport } from './routes/our-team/index'
+import { Route as OurTeamSlugRouteImport } from './routes/our-team/$slug'
 import { Route as PracticeAreasIndexRouteImport } from './routes/practice-areas.index'
 import { Route as PracticeAreasSlugRouteImport } from './routes/practice-areas.$slug'
 import { Route as ApiPublicBookingsRouteImport } from './routes/api/public/bookings'
@@ -69,11 +69,6 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OurTeamRoute = OurTeamRouteImport.update({
-  id: '/our-team',
-  path: '/our-team',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
@@ -104,10 +99,15 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const OurTeamIndexRoute = OurTeamIndexRouteImport.update({
+  id: '/our-team/',
+  path: '/our-team/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OurTeamSlugRoute = OurTeamSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => OurTeamRoute,
+  id: '/our-team/$slug',
+  path: '/our-team/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PracticeAreasIndexRoute = PracticeAreasIndexRouteImport.update({
   id: '/practice-areas/',
@@ -138,7 +138,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
-  '/our-team': typeof OurTeamRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -147,6 +146,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AuthenticatedAdminRoute
   '/our-team/$slug': typeof OurTeamSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/our-team/': typeof OurTeamIndexRoute
   '/practice-areas/': typeof PracticeAreasIndexRoute
   '/api/public/bookings': typeof ApiPublicBookingsRoute
   '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
@@ -159,7 +159,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
-  '/our-team': typeof OurTeamRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -168,6 +167,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AuthenticatedAdminRoute
   '/our-team/$slug': typeof OurTeamSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/our-team': typeof OurTeamIndexRoute
   '/practice-areas': typeof PracticeAreasIndexRoute
   '/api/public/bookings': typeof ApiPublicBookingsRoute
   '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
@@ -182,7 +182,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
-  '/our-team': typeof OurTeamRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -191,6 +190,7 @@ export interface FileRoutesById {
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/our-team/$slug': typeof OurTeamSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/our-team/': typeof OurTeamIndexRoute
   '/practice-areas/': typeof PracticeAreasIndexRoute
   '/api/public/bookings': typeof ApiPublicBookingsRoute
   '/api/public/enquiries': typeof ApiPublicEnquiriesRoute
@@ -205,7 +205,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/gallery'
-    | '/our-team'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
@@ -214,6 +213,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/our-team/$slug'
     | '/practice-areas/$slug'
+    | '/our-team/'
     | '/practice-areas/'
     | '/api/public/bookings'
     | '/api/public/enquiries'
@@ -226,7 +226,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/gallery'
-    | '/our-team'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
@@ -235,6 +234,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/our-team/$slug'
     | '/practice-areas/$slug'
+    | '/our-team'
     | '/practice-areas'
     | '/api/public/bookings'
     | '/api/public/enquiries'
@@ -248,7 +248,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/gallery'
-    | '/our-team'
     | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
@@ -257,6 +256,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin'
     | '/our-team/$slug'
     | '/practice-areas/$slug'
+    | '/our-team/'
     | '/practice-areas/'
     | '/api/public/bookings'
     | '/api/public/enquiries'
@@ -271,13 +271,14 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
   GalleryRoute: typeof GalleryRoute
-  OurTeamRoute: typeof OurTeamRouteWithChildren
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
+  OurTeamSlugRoute: typeof OurTeamSlugRoute
   PracticeAreasSlugRoute: typeof PracticeAreasSlugRoute
+  OurTeamIndexRoute: typeof OurTeamIndexRoute
   PracticeAreasIndexRoute: typeof PracticeAreasIndexRoute
   ApiPublicBookingsRoute: typeof ApiPublicBookingsRoute
   ApiPublicEnquiriesRoute: typeof ApiPublicEnquiriesRoute
@@ -341,13 +342,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/our-team': {
-      id: '/our-team'
-      path: '/our-team'
-      fullPath: '/our-team'
-      preLoaderRoute: typeof OurTeamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/privacy-policy': {
       id: '/privacy-policy'
       path: '/privacy-policy'
@@ -390,12 +384,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/our-team/': {
+      id: '/our-team/'
+      path: '/our-team'
+      fullPath: '/our-team/'
+      preLoaderRoute: typeof OurTeamIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/our-team/$slug': {
       id: '/our-team/$slug'
-      path: '/$slug'
+      path: '/our-team/$slug'
       fullPath: '/our-team/$slug'
       preLoaderRoute: typeof OurTeamSlugRouteImport
-      parentRoute: typeof OurTeamRoute
+      parentRoute: typeof rootRouteImport
     }
     '/practice-areas/': {
       id: '/practice-areas/'
@@ -439,17 +440,6 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
-interface OurTeamRouteChildren {
-  OurTeamSlugRoute: typeof OurTeamSlugRoute
-}
-
-const OurTeamRouteChildren: OurTeamRouteChildren = {
-  OurTeamSlugRoute: OurTeamSlugRoute,
-}
-
-const OurTeamRouteWithChildren =
-  OurTeamRoute._addFileChildren(OurTeamRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
@@ -459,13 +449,14 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
   GalleryRoute: GalleryRoute,
-  OurTeamRoute: OurTeamRouteWithChildren,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
+  OurTeamSlugRoute: OurTeamSlugRoute,
   PracticeAreasSlugRoute: PracticeAreasSlugRoute,
+  OurTeamIndexRoute: OurTeamIndexRoute,
   PracticeAreasIndexRoute: PracticeAreasIndexRoute,
   ApiPublicBookingsRoute: ApiPublicBookingsRoute,
   ApiPublicEnquiriesRoute: ApiPublicEnquiriesRoute,

@@ -31,7 +31,7 @@ export function Footer() {
           <ul className="mt-5 space-y-2.5 text-sm text-foreground/75">
             {[
               ["/about", "About"],
-              ["/partners", "Partners"],
+              ["/our-team", "Our Team"],
               ["/practice-areas", "Practice Areas"],
               ["/Gallery", "Gallery"],
               ["/faqs", "FAQs"],

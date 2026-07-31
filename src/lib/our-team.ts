@@ -125,7 +125,7 @@ export const partners: Partner[] = [
     phone: "+91 81237 17821",
     photo: adv4,
     short:
-      "Multidisciplinary practice spanning civil and criminal litigation, real estate, consumer, administrative, and service law before the High Court, CAT, and KAT.",
+      "Multidisciplinary practice spanning civil and criminal litigation, real estate, consumer, administrative, and service law before the High Court, CAT, and KSAT.",
     practiceAreas: [
       "Civil Litigation",
       "Criminal Litigation",
@@ -139,18 +139,18 @@ export const partners: Partner[] = [
       "He brings comprehensive expertise to the firm, specializing in civil and criminal litigation, real estate transactions and disputes, consumer protection, and debt recovery laws.",
       "In addition to standard trial litigation, he boasts extensive experience navigating administrative and service law.",
       "He also handles real estate deals for individuals and builders and has expertise in drafting Joint Development Agreements (JDAs) and agreements between individuals and builders.",
-      "He regularly represents individuals, corporations, and government employees before both the Karnataka Administrative Tribunal (KAT) and the Central Administrative Tribunal (CAT), delivering favourable outcomes in intricate regulatory matters.",
+      "He regularly represents individuals, corporations, and government employees before both the Karnataka State Administrative Tribunal (KSAT) and the Central Administrative Tribunal (CAT), delivering favourable outcomes in intricate regulatory matters.",
       "He also renders title opinions for individuals and projects in Karnataka.",
     ],
     courts: [
       "High Court of Karnataka",
-      "Karnataka Administrative Tribunal (KAT)",
+      "Karnataka State Administrative Tribunal (KSAT)",
       "Central Administrative Tribunal (CAT)",
       "Trial Courts",
     ],
     languages: ["English", "Kannada", "Hindi", "Marathi"],
     keywords:
-      "Advocate in Bengaluru, High Court Advocate, Civil Lawyer, Criminal Lawyer, Administrative Law Expert, KAT Advocate, CAT Advocate, Property Lawyer",
+      "Advocate in Bengaluru, High Court Advocate, Civil Lawyer, Criminal Lawyer, Administrative Law Expert, KSAT Advocate, CAT Advocate, Property Lawyer",
   },
 ];
 

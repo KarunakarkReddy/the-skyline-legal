@@ -37,8 +37,8 @@ export const courts: Court[] = [
     icon: Gavel,
   },
   {
-    name: "Karnataka Administrative Tribunal (KAT)",
-    short: "KAT",
+    name: "Karnataka StateAdministrative Tribunal (KSAT)",
+    short: "KSAT",
     desc: "State-service disputes, disciplinary matters, and administrative reviews for Karnataka employees.",
     icon: FileText,
   },
